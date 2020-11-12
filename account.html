@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tài khoản</title>
+</head>
+<body>
+    <div class="header">
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="125px"></a> the ô chỉ xem nào
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href=""></a>Về tôi</li>
+                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="account.html">Tài khoản</a></li>
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px"> 
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        </div>
+
+        <div class="account-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/image1.png" width="100%">
+                    </div>
+                    <div class="col-2">
+                        <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Đăng nhập</span>
+                            <span onclick="register()">Đăng ký</span>
+                            <hr id="ndt">
+                        </div>
+                        <form action='login.php' class="dangnhap" method='POST' id="LoginForm">
+                            <input type="text" placeholder="nhập tài khoản">
+                            <input type="password" placeholder="nhập mật khẩu">
+                            <button type="submit" class="btn">Đăng nhập</button>
+                            <a href="">Quên mật khẩu</a>
+                            <?php require 'xuly.php';?> 
+                        </form>
+                        <form id="RegForm">
+                            <input type="text" placeholder="nhập tài khoản">
+                            <input type="text" placeholder="nhập email">
+                            <input type="password" placeholder="nhập mật khẩu">
+                            <input type="password" placeholder="nhập lại mật khẩu">
+                            <button type="submit" class="btn">Đăng ký</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Tải App tại</h3>
+                    <p><a href="">tshop.com</a></p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Bài tập lớn - webshop bán hàng<br>Nhóm 5    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Chức năng khác</h3>
+                    <ul>
+                        <li>Phiếu giảm giá</li>
+                        <li>Bài viết trên blog</li>
+                        <li>Chính sách hoàn trả</li>
+                        <li>Tham gia liên kết</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Liên hệ</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2020 - T-Shop</p>
+        </div>
+    </div>
+
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var ndt = document.getElementById("ndt");
+
+            function register(){
+                RegForm.style.transform = "translateX(0px)";
+                LoginForm.style.transform = "translateX(0px)";
+                ndt.style.transform = "translateX(100px)";
+            }
+
+            function login(){
+                RegForm.style.transform = "translateX(300px)";
+                LoginForm.style.transform = "translateX(300px)";
+                ndt.style.transform = "translateX(0px)";
+            }
+    </script>
+</body>
+</html>
